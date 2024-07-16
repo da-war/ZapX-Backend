@@ -14,6 +14,7 @@ export interface UserDocument extends Document {
     url: string;
     id: string;
   };
+  preferences?: [string];
 }
 
 interface Methods {
@@ -28,6 +29,7 @@ export const userSchema = new Schema<UserDocument, {}, Methods>(
     name: { type: String, required: true },
     isVerified: { type: Boolean, default: false },
     tokens: [String],
+    preferences: [String],
     avatar: {
       type: Object,
       url: String,

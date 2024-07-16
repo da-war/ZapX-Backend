@@ -1,14 +1,24 @@
-const categories = [
-  "Electronics",
-  "Fashion",
-  "Fitness",
-  "Home & Kitchen",
-  "Books",
-  "Toys & Games",
-  "Beauty & Personal Care",
-  "Sports & Outdoors",
-  "Automotive",
-  "Tools & Home Improvement",
+const jobCategories = [
+  "Software Development",
+  "Data Science",
+  "Project Management",
+  "Sales & Marketing",
+  "Customer Service",
+  "Healthcare",
+  "Education & Training",
+  "Finance & Accounting",
+  "Human Resources",
+  "Administrative Support",
+  "Engineering",
+  "Design & Creative",
+  "Legal",
+  "Manufacturing",
+  "Operations",
+  "Real Estate",
+  "Research & Development",
+  "Transportation & Logistics",
+  "Construction",
+  "Hospitality & Tourism",
 ];
 
-export default categories.sort();
+export default jobCategories.sort();

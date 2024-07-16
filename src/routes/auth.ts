@@ -17,6 +17,7 @@ import { validate } from "src/middleware/validator";
 import { newUserSchema, verifyTokenSchema } from "src/utils/validationSchema";
 import { isAuth, isValidPasswordResetToken } from "src/middleware/auth";
 import fileParser from "src/middleware/fileparser";
+import { deleteProduct } from "src/controllers/product";
 
 const authRouter = Router();
 
@@ -27,7 +28,7 @@ authRouter.post("/login", signIn);
 authRouter.get("/profile", isAuth, sendProfile);
 authRouter.post("/refresh-token", refreshToken);
 authRouter.get("/sign-out", isAuth, signOut);
-authRouter.get("/forgot-password", regeneratePassword);
+authRouter.post("/forgot-password", regeneratePassword);
 authRouter.get(
   "/verify-pass-reset-token",
   validate(verifyTokenSchema),
@@ -36,6 +37,7 @@ authRouter.get(
 );
 
 authRouter.patch("/update-profile", isAuth, updateProfile);
+authRouter.delete("/delete", isAuth, deleteProduct);
 
 authRouter.patch("/update-avatar", isAuth, fileParser, updateAvatar);
 authRouter.get("/profile/:id", isAuth, sendPublicProfile);

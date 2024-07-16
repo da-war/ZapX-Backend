@@ -1,6 +1,6 @@
 import { connect } from "mongoose";
 
-const uri = "mongodb://127.0.0.1:27017/smart-cycle-market";
+const uri = "mongodb://127.0.0.1:27017/apprentis";
 
 connect(uri, {})
   .then(() => {

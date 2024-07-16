@@ -83,3 +83,52 @@ export const newProductSchema = yup.object({
     })
     .required("Purchasing date is missing"),
 });
+
+import * as Yup from "yup";
+
+export const jobSchema = Yup.object({
+  title: Yup.string().required("Title is required"),
+  description: Yup.string().required("Description is required"),
+  category: Yup.string().required("Category is required"),
+  company: Yup.string().required("Company is required"),
+  location: Yup.string().required("Location is required"),
+  type: Yup.string().required("Type is required"),
+  postedDate: Yup.date().required("Posted date is required"),
+  closingDate: Yup.date().required("Closing date is required"),
+  salary: Yup.number().required("Salary is required"),
+  requirements: Yup.array().of(
+    Yup.string().required("Requirement is required")
+  ),
+});
+
+export const internshipSchema = Yup.object({
+  title: Yup.string().required("Title is required"),
+  description: Yup.string().required("Description is required"),
+  category: Yup.string().required("Category is required"),
+  company: Yup.string().required("Company is required"),
+  location: Yup.string().required("Location is required"),
+  type: Yup.string().required("Type is required"),
+  postedDate: Yup.date().required("Posted date is required"),
+  closingDate: Yup.date().required("Closing date is required"),
+  stipend: Yup.number().required("Stipend is required"),
+  duration: Yup.string().required("Duration is required"),
+  requirements: Yup.array().of(
+    Yup.string().required("Requirement is required")
+  ),
+});
+
+export const apprenticeshipSchema = Yup.object({
+  title: Yup.string().required("Title is required"),
+  description: Yup.string().required("Description is required"),
+  category: Yup.string().required("Category is required"),
+  company: Yup.string().required("Company is required"),
+  location: Yup.string().required("Location is required"),
+  type: Yup.string().required("Type is required"),
+  postedDate: Yup.date().required("Posted date is required"),
+  closingDate: Yup.date().required("Closing date is required"),
+  salary: Yup.number().required("Salary is required"),
+  duration: Yup.string().required("Duration is required"),
+  requirements: Yup.array().of(
+    Yup.string().required("Requirement is required")
+  ),
+});

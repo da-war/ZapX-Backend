@@ -6,7 +6,7 @@ import { sendResponse } from "src/utils/helper";
 import { UploadApiResponse } from "cloudinary";
 import { isValidObjectId } from "mongoose";
 import { UserDocument } from "src/models/user";
-import categories from "src/utils/categories";
+import jobCategories from "src/utils/categories";
 
 const uploadImage = async (image: any): Promise<UploadApiResponse> => {
   return cloudinaryUploader.upload(image, {
@@ -261,7 +261,7 @@ export const getProductByCategory: RequestHandler = async (req, res) => {
     limit: string;
   };
 
-  if (!categories.includes(category))
+  if (!jobCategories.includes(category))
     sendResponse(res, 422, "Invalid category");
 
   const products = await ProductModel.find({ category })

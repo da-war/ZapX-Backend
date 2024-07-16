@@ -67,7 +67,7 @@ export const verifyEmail: RequestHandler = async (req, res) => {
 
   await UserModal.findByIdAndUpdate(id, { isVerified: true });
 
-  sendResponse(res, 200, "Welcome to ZapXm, Email verified successfully");
+  sendResponse(res, 200, "Welcome to Apprentis, Email verified successfully");
 };
 
 export const signIn: RequestHandler = async (req, res) => {
